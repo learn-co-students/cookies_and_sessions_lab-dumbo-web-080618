@@ -1,0 +1,15 @@
+<% if @cart.any? %>
+  <h3>Items in Cart:</h3>
+  <% @cart.each do |i| %>
+    <%= i %>
+  <% end %>
+<% end %>
+
+<br />
+
+
+<%= form_tag '/products' do %>
+  <%= label_tag :product, "Add to Cart:" %>
+  <%= text_field_tag :product %>
+  <%= submit_tag("add to cart") %>
+<% end %>
